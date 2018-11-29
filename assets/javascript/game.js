@@ -1,3 +1,10 @@
+//VARIABLES
+var randomNumber = 0
+var playerTotal = 0
+var wins = 0
+var losses = 0
+var crystals = [c1, c2, c3, c4]
+
 //game is reset so score value is set to 0 and 'announce' text hidden
 
 //random number (19-120) is generated and displayed on page
