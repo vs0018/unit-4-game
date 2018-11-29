@@ -9,6 +9,11 @@ body {
     color: whitesmoke;
 }
 
+div {
+    padding: 10px;
+    margin: 5px;
+}
+
 #heading {
     background-color: blueviolet;
     font-size: 50px;
@@ -18,6 +23,13 @@ body {
 
 #instructions {
     background-color: cornflowerblue;
+    float: left;
+    clear: left;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
     float: left;
     clear: left;
 }
