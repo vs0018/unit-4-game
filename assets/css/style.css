@@ -3,17 +3,57 @@
 }
 
 body {
-    background-image: url("assets\images\background.jpeg");
-    background: black;
+    background-color: black;
+    background-image: url("../images/background.jpeg");
+    background-size: cover;
     color: whitesmoke;
+}
+
+#heading {
+    background-color: blueviolet;
+    font-size: 50px;
+    float: left;
+    clear: left;
+}
+
+#instructions {
+    background-color: cornflowerblue;
+    float: left;
+    clear: left;
+}
+
+#total {
+    background-color: cadetblue;
+    float: left;
+    clear: left;
+}
+
+#winsLoss {
+    background-color: cornsilk;
+    color: black;
+    float: left;
 }
 
 .buttons {
     display: inline;
+    float: left;
+    clear: left;
 }
 
 img {
     width: 125px;
     height: 125px;
     padding: 10px;
+}
+
+#totalScore1 {
+    background-color: plum;
+    float: left;
+    clear: left;
+}
+
+#totalScore2 {
+    background-color: plum;
+    float: left;
+    clear: left;
 }
