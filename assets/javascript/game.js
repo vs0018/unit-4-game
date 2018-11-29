@@ -1,37 +1,52 @@
-//VARIABLES
-var randomNumber = 0;
-var playerTotal = 0;
 var wins = 0;
 var losses = 0;
-// var crystals = [c1, c2, c3, c4]
 
-//game is reset so score value is set to 0 and 'announce' text hidden
+$(document).ready(function() {
+
+//game is set so score value is set to 0
+    var playerTotal = 0;
 
 //random number (19-120) is generated and displayed on page
-$("#guessNumber").text(randomNumber);
+    var random = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
 
-//random crystal values are generated (1-12)
+//number is displayed on page
+    $("#guessNumber").text(random);
+
+//Four random crystal values are generated (1-12)
+$(".buttons").each(function() {
+        crystalValue = Math.floor(Math.random() * 12) + 1;
+        $("img").val(crystalValue);
+    if ( $(this).is( "#crystal4" ) ) {
+      return false;
+    }
+  });
 
 //player clicks on crystal, its value is added to display
 $(".crystal").on("click", function() {
 
-    alert("You clicked a crystal!");
+    var totalScore = crystalValue + totalScore;
+
+    $("#playScore").text(totalScore);
 
 //total is compared to random number
-    if (playerTotal === randomNumber) {
+    if (playerTotal === random) {
 
 //if it matches, win is displayed, wins are incremented, and new numbers generated (game reset)
         $("#announce").text("You win!!");
-      } else if (playerTotal > randomNumber) {
+        wins++;
+        $("#wins").text(wins);
+        playerTotal = 0;
+      } 
+//if it is greater than the random number, loss is displayed, losses are incremented, and new numbers generated (game reset)      
+      else if (playerTotal > random) {
         $("#announce").text("You lose!!");
+        losses++;
+        $("#wins").text(losses);
+        playerTotal = 0;
       }
 
   });
 
-$("#playScore").text(playerTotal);
+  $("#playScore").text(playerTotal);
 
-
-
-
-
-//if it is greater than the random number, loss is displayed, losses are incremented, and new numbers generated (game reset)
+});
