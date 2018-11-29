@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets\css\reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets\css\style.css" />
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="assets\javascript\game.js"></script>
 </head>
 <body>
     <div id="heading">
@@ -21,7 +19,7 @@
     <br>
     <div class="container">
         <div id="random">
-            <p>""</p>
+            <span id="guessNumber">""</span>
         </div>
         <div id="winsLoss">
             <p id="announce">""</p>
@@ -31,10 +29,10 @@
     </div>
     <br>
     <div class="buttons">
-        <img id="crystal1" src="assets\images\bluecrystal.jpg">
-        <img id="crystal2" src="assets\images\greencrystal.jpg">  
-        <img id="crystal3" src="assets\images\purplecrystal.jpg">
-        <img id="crystal4" src="assets\images\whitecrystal.jpg">
+        <img class="crystal" id="crystal1" src="assets\images\bluecrystal.jpg">
+        <img class="crystal" id="crystal2" src="assets\images\greencrystal.jpg">  
+        <img class="crystal" id="crystal3" src="assets\images\purplecrystal.jpg">
+        <img class="crystal" id="crystal4" src="assets\images\whitecrystal.jpg">
     </div>
     <br>
     <div id="scoreTitle">
@@ -42,9 +40,12 @@
     </div>
     <br>
     <div id="totalScore">
-        <p>""</p>
+        <span id="playScore">""</span>
     </div>
     <br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script src="assets/javascript/game.js"></script>
 
 </body>
 </html>
