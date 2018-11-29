@@ -17,6 +17,7 @@ div {
 #heading {
     background-color: blueviolet;
     font-size: 50px;
+    text-align: center;
     float: left;
     clear: left;
 }
@@ -34,7 +35,7 @@ div {
     clear: left;
 }
 
-#total {
+#random {
     background-color: cadetblue;
     float: left;
     clear: left;
