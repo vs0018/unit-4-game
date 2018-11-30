@@ -1,32 +1,34 @@
+//Global variables
 var wins = 0;
 var losses = 0;
 
+//function to generate a random number
+function getRandomNumber (minNumber, maxNumber) {
+    return Math.floor(Math.random() * (maxNumber + 1) + minNumber);
+}
+
+//GAME CODE START
 $(document).ready(function() {
 
-//game is set so score value is set to 0
-    var playerTotal = 0;
-
 //random number (19-120) is generated and displayed on page
-    var random = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+    var random = getRandomNumber(19, 120);
 
 //number is displayed on page
     $("#guessNumber").text(random);
 
 //Four random crystal values are generated (1-12)
-$(".buttons").each(function() {
-        crystalValue = Math.floor(Math.random() * 12) + 1;
-        $("img").val(crystalValue);
-    if ( $(this).is( "#crystal4" ) ) {
-      return false;
-    }
-  });
+$(".crystal").each(function() {
+    var crystalValue = getRandomNumber(1, 12);
+            $("img").data("value", crystalValue);
+        });
 
 //player clicks on crystal, its value is added to display
-$(".crystal").on("click", function() {
+var playerTotal = $(".crystal").click(function() {
 
-    var totalScore = crystalValue + totalScore;
+    $(".crystal").val("value") + playerTotal;
+});
 
-    $("#playScore").text(totalScore);
+    $("#playScore").text(playerTotal);
 
 //total is compared to random number
     if (playerTotal === random) {
@@ -34,19 +36,17 @@ $(".crystal").on("click", function() {
 //if it matches, win is displayed, wins are incremented, and new numbers generated (game reset)
         $("#announce").text("You win!!");
         wins++;
-        $("#wins").text(wins);
         playerTotal = 0;
       } 
 //if it is greater than the random number, loss is displayed, losses are incremented, and new numbers generated (game reset)      
       else if (playerTotal > random) {
         $("#announce").text("You lose!!");
         losses++;
-        $("#wins").text(losses);
         playerTotal = 0;
       }
 
-  });
-
-  $("#playScore").text(playerTotal);
+$("#wins").text(wins);
+$("#losses").text(losses);
+$("#playScore").text(playerTotal);
 
 });
