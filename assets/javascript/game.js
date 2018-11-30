@@ -1,14 +1,12 @@
-//Global variables
-var wins = 0;
-var losses = 0;
+//GAME CODE START
+$(document).ready(function() {
+    var wins = 0;
+    var losses = 0;
 
 //function to generate a random number
 function getRandomNumber (minNumber, maxNumber) {
     return Math.floor(Math.random() * (maxNumber + 1) + minNumber);
 }
-
-//GAME CODE START
-$(document).ready(function() {
 
 //random number (19-120) is generated and displayed on page
     var random = getRandomNumber(19, 120);
@@ -17,18 +15,21 @@ $(document).ready(function() {
     $("#guessNumber").text(random);
 
 //Four random crystal values are generated (1-12)
-$(".crystal").each(function() {
-    var crystalValue = getRandomNumber(1, 12);
-            $("img").data("value", crystalValue);
-        });
+    $(".crystal").each(function() {
+        var crystalValue = getRandomNumber(1, 12);
+        
+        $("img").data("value", crystalValue);
+    });
 
 //player clicks on crystal, its value is added to display
-var playerTotal = $(".crystal").click(function() {
+var playerTotal = 0;
 
-    $(".crystal").val("value") + playerTotal;
+$(".crystal").click(function() {
+//how to get this into a variable outside of the function???
+    console.log($("img").val("value"));
+
+    $("img").val("value") + playerTotal;
 });
-
-    $("#playScore").text(playerTotal);
 
 //total is compared to random number
     if (playerTotal === random) {
