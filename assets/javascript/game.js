@@ -2,6 +2,7 @@
 $(document).ready(function() {
     var wins = 0;
     var losses = 0;
+    var playerTotal = 0;
 
 //function to generate a random number
 function getRandomNumber (minNumber, maxNumber) {
@@ -16,20 +17,16 @@ function getRandomNumber (minNumber, maxNumber) {
 
 //Four random crystal values are generated (1-12)
     $(".crystal").each(function() {
-        var crystalValue = getRandomNumber(1, 12);
-        
-        $("img").data("value", crystalValue);
+        crystalValue = getRandomNumber(1, 12);
+        $(this).data("value", crystalValue);
     });
 
 //player clicks on crystal, its value is added to display
-var playerTotal = 0;
-
 $(".crystal").click(function() {
-//how to get this into a variable outside of the function???
-    console.log($("img").val("value"));
-
-    $("img").val("value") + playerTotal;
+    console.log($(this).data("value"));
 });
+
+$("#playScore").text();
 
 //total is compared to random number
     if (playerTotal === random) {
@@ -48,6 +45,5 @@ $(".crystal").click(function() {
 
 $("#wins").text(wins);
 $("#losses").text(losses);
-$("#playScore").text(playerTotal);
 
 });
